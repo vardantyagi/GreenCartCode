@@ -86,6 +86,8 @@ const Cart = () => {
                 const { data } = await res;
                 if (data.success) {
                     window.location.replace(data.url);
+                    setCartItems({});
+                    navigate('/my-orders')
                 } else {
                     toast.error(data.message);
                 }
