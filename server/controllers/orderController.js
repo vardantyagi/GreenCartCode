@@ -12,8 +12,6 @@ export const placeOrderCOD = async (req, res) => {
       return res.json({ success: false, message: 'Invalid data' });
     }
 
-    console.log("placeOrderCOD:", items);
-
     // calculate amount using items
     let amount = await items.reduce(async (acc, item) => {
       const product = await Product.findById(item.product);
@@ -49,12 +47,11 @@ export const placeOrderStripe = async (req, res) => {
     //   return res.json({ success: false, message: 'Invalid data' });
     // }
     if (items.length === 0) {
-      return res.json({ success: false, message: 'Please add Add Product' });
+      return res.json({ success: false, message: 'Please add some Product' });
     }
     if (!address) {
       return res.json({ success: false, message: 'Please add Address' });
     }
-    console.log("placeOrderStripe:", items);
 
     let productData = [];
 
@@ -181,7 +178,6 @@ export const getUserOrders = async (req, res) => {
       userId,
       $or: [{ paymentType: 'COD' }, { isPaid: true }] // either paymentType: 'COD' or ispaid: true
     }).populate('items.product address').sort({ createdAt: -1 });
-    console.log("orders:", orders);
 
     res.json({ success: true, orders });
   } catch (e) {

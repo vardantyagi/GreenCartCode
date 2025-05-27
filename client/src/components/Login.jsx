@@ -16,7 +16,6 @@ const Login = () => {
             e.preventDefault();
             const res = await axios.post(`/api/user/${state}`, { name, email, password })
             const { data } = await res;
-            console.log(data);
             
             if (data.success) {
                 toast.success(data.message);

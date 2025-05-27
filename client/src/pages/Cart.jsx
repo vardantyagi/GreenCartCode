@@ -26,11 +26,9 @@ const Cart = () => {
         try {
             const res = await axios.get('/api/address/get');
             const { data } = await res;
-            console.log(data);
 
             if (data.success) {
                 setAddresses(data.addresses)
-                console.log(data.addresses);
 
                 if (data.addresses.length > 0) {
                     setSelectedAddress(data.addresses[0]);
@@ -51,7 +49,6 @@ const Cart = () => {
                 toast.error('Please select an address');
                 return;
             }
-            console.log(cartItems);
 
             // place order with COD
             if (paymentOption === 'COD') {

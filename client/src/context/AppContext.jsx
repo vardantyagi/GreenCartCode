@@ -14,7 +14,6 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
 
   const currency = import.meta.env.VITE_CURRENCY;
-  // const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const navigate = useNavigate();
   const [user, setUser] = useState(false);
@@ -74,7 +73,6 @@ export const AppContextProvider = ({ children }) => {
   // add products to cart
   const addToCart = (itemId) => {
     let cartData = structuredClone(cartItems); // deepcloneing
-    console.log(cartData);
 
     if (cartData[itemId]) { // {itemId, freq}
       cartData[itemId] += 1;
@@ -82,7 +80,6 @@ export const AppContextProvider = ({ children }) => {
       cartData[itemId] = 1;
     }
     setCartItems(cartData);
-    console.log(cartItems);
 
     toast.success('Added to Cart');
   }

@@ -86,9 +86,7 @@ export const isAuth = async(req,res)=>{
     // const {userId} = req.body;
     const {userId} = req;    
     const user = await User.findById(userId).select('-password'); // exclude password
-    console.log(user);
     res.json({success: true, user});
-    
   } catch (e) {
     console.log('userController check auth error',e.message);
     res.json({success: false, message: e.message});

@@ -9,7 +9,6 @@ const ProductCategory = () => {
   const {category} = useParams();
   const searchCategory = categories.find((product)=>product.path.toLowerCase()===category.trim().toLowerCase());
   const filteredProducts = products.filter((product)=>product.category.toLowerCase()===searchCategory.path.toLowerCase());
-  console.log(searchCategory);
   
   return (
     <div className='mt-16'>

@@ -8,7 +8,6 @@ const MyOrders = () => {
   const { cartItems, currency, axios, user } = useAppContext();
 
   const [myOrders, setMyOrders] = useState([]);
-  console.log(currency);
 
 
   const fetchMyOrders = async () => {
@@ -29,7 +28,6 @@ const MyOrders = () => {
       fetchMyOrders();
     }
   }, [user])
-  console.log(myOrders);
 
   return (
     <div className='mt-16 pb-16'>

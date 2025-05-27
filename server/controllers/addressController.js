@@ -18,7 +18,6 @@ export const getAddress = async(req,res)=>{
   try {
     const {userId} = req;      
     const addresses = await Address.find({userId});
-    console.log("address:",addresses);
     res.json({success: true, addresses});
   } catch (e) {
     console.log('getAddress error:',e.message);
