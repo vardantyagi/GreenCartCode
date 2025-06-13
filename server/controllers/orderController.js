@@ -198,5 +198,3 @@ export const getAllOrders = async (req, res) => {
     return res.json({ success: false, message: e.message });
   }
 }
-
-// 10:13:42
