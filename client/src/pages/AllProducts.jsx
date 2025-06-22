@@ -24,7 +24,7 @@ const AllProducts = () => {
         <p className='text-2xl font-medium uppercase'>ALL PRODUCTS</p>
         <div className='w-16 h-0.5 bg-primary rounded-full'></div>
         {/* grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-6 lg:grid-cols-5 mt-6 */}
-        <div className='w-full flex flex-col items-center mt-6 sm:flex-row sm:justify-start gap-5'>
+        <div className='w-full flex flex-col items-center mt-6 sm:flex-row sm:justify-start flex-wrap gap-5'>
           {
             filteredProducts.filter((product)=>product?.inStock).map((product,i)=>{
               return(
