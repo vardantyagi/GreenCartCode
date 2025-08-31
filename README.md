@@ -50,7 +50,6 @@ The app includes **JWT authentication**, **Cloudinary integration** for product 
 
 ### 1️⃣ Clone the repository
 
-```bash
 git clone https://github.com/vardantyagi/GreenCartCode.git
 cd GreenCartCode
 
@@ -66,8 +65,7 @@ npm install
 
 ### 3️⃣ Setup environment variables
 
-Create a .env file inside backend folder with:
-
+# Create a .env file inside backend folder with:
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name
@@ -75,6 +73,7 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 ### 4️⃣ Run the app
+
 # Run backend (default: http://localhost:3000)
 cd backend
 npm start
